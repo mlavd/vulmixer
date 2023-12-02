@@ -1,0 +1,4 @@
+train: ./data/jsonl/codexglue/train.jsonl
+valid: ./data/jsonl/codexglue/valid.jsonl
+test: ./data/jsonl/codexglue/test.jsonl
+labels: [ safe, vulnerable ]

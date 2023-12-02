@@ -1,0 +1,42 @@
+type: fire
+
+max_seq_length: &max_seq_length 1024
+batch_size: 96
+
+input:
+  embeddings: microsoft/graphcodebert-base
+  embedding_size: &embedding_size 768
+  truncate: False
+  normalize: False
+
+bottleneck:
+  type: linear
+  embedding_size: *embedding_size
+  hidden_dim: &hidden_dim 128
+
+mixers:
+  - token:
+      type: mha
+      num_heads: 16
+      hidden_dim: *hidden_dim
+      drop_prob: 0
+      activation: gelu
+    feature:
+      type: mlp
+      hidden_dim: *hidden_dim
+      inner_dim: *hidden_dim
+      activation: gelu
+      dropout: 0.5
+    depth: 4
+    hidden_dim: *hidden_dim
+
+classifier:
+  type: linear
+  pooling: max
+  hidden_dim: *hidden_dim
+  num_classes: 2
+
+optimizer:
+  lr: 5e-4
+  betas: [0.9, 0.999]
+  eps: 1e-8

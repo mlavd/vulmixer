@@ -1,0 +1,4 @@
+train: ./data/jsonl/diversevul/train.jsonl
+valid: ./data/jsonl/diversevul/valid.jsonl
+test: ./data/jsonl/diversevul/test.jsonl
+labels: [ safe, vulnerable ]

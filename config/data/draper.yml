@@ -1,0 +1,4 @@
+train: ./data/jsonl/draper/train.jsonl
+valid: ./data/jsonl/draper/valid.jsonl
+test: ./data/jsonl/draper/test.jsonl
+labels: [ safe, vulnerable ]

@@ -1,0 +1,4 @@
+train: ./data/jsonl/d2a/train.jsonl
+valid: ./data/jsonl/d2a/valid.jsonl
+test: ./data/jsonl/d2a/valid.jsonl
+labels: [ safe, vulnerable ]

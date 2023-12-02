@@ -1,0 +1,4 @@
+train: ./data/jsonl/profile/wildc_subset.jsonl
+valid: ./data/jsonl/profile/wildc_subset.jsonl
+test: ./data/jsonl/profile/wildc_subset.jsonl
+labels: [ safe, vulnerable ]
